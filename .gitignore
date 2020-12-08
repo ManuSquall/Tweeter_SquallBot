@@ -1,5 +1,8 @@
-auth.py
+#personal VS code config
+.vscode
+
 # file wich contain your tokens in this format:
+auth.py
 # consumer_key        = 'ABCDEFGHIJKLKMNOPQRSTUVWXYZ'
 # consumer_secret     = '1234567890ABCDEFGHIJKLMNOPQRSTUVXYZ'
 # access_token        = 'ZYXWVUTSRQPONMLKJIHFEDCBA'
