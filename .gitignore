@@ -1,9 +1,13 @@
 #personal VS code config
-.vscode
+.vscode/
+__pycache__/
 
-# file wich contain your tokens in this format:
+# file which contain your tokens in this format:
 auth.py
 # consumer_key        = 'ABCDEFGHIJKLKMNOPQRSTUVWXYZ'
 # consumer_secret     = '1234567890ABCDEFGHIJKLMNOPQRSTUVXYZ'
 # access_token        = 'ZYXWVUTSRQPONMLKJIHFEDCBA'
 # access_token_secret = '0987654321ZYXWVUTSRQPONMLKJIHFEDCBA'
+
+#file which contains the save of all my followers
+manusquall_followers.csv
