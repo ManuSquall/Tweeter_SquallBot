@@ -1,6 +1,6 @@
 #personal VS code config
-.vscode/
-__pycache__/
+.vscode
+__pycache__
 
 # file which contain your tokens in this format:
 auth.py
