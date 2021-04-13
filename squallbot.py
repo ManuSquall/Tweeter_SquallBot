@@ -1,3 +1,4 @@
+# -*-coding:Latin-1 -*
 import tweepy
 import time
 import csv
@@ -6,7 +7,7 @@ import datetime
 
 
 # import tokens to access twetter api
-from auth import (
+from auth.auth import (
     consumer_key,
     consumer_secret,
     access_token,
@@ -110,9 +111,9 @@ try:
             if(follower.screen_name=="squallbot1"):
                 print(present)
             if(present==0):
-                    print(row[1], " n'est plus présent")
-                    userFollower = api.get_user(follower.screen_name)
-                    unfollowersDict[row[0]] = ("@"+row[1])
+                print(row[1], " n'est plus présent")
+                userFollower = api.get_user(follower.screen_name)
+                unfollowersDict[row[0]] = ("@"+row[1])
 
 
 
@@ -136,18 +137,22 @@ try:
 
     #direct messages:
     recipient_id= user.id_str
-    text = "La liste des unfollowers depuis le dernier check: \n\n"
+
+    if(bool(unfollowersDict)):
+        text = "La liste des unfollowers depuis le dernier check: \n\n"
 
 
-    for key in unfollowersDict:
-        text += key + " : " + unfollowersDict[key]
-        text += "\n"
+        for key in unfollowersDict:
+            text += key + " : " + unfollowersDict[key]
+            text += "\n"
+    else:
+        text = "La liste des unfollowers depuis le dernier check est vide"
 
     print(text)
 
 
-    # direct_message = api.send_direct_message(recipient_id, text)
-    # print(direct_message.message_create['message_data']['text'])
+    direct_message = api.send_direct_message(recipient_id, text)
+    print(direct_message.message_create['message_data']['text'])
 
 
 #if the csv file doesn't exist
