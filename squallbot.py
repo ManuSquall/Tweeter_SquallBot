@@ -64,22 +64,6 @@ user = api.get_user('manusquall')
 unfollowersDict = {}
 
 
-
-
-
-# print(user.screen_name)
-# print("le nombre de personne qui vous suivent : ", user.followers_count)
-# print("le nombre de personne que vous suivez : ", user.friends_count)
-# for friend in user.friends():
-#    print(friend.screen_name)
-   
-# print("-----------------------------------------------------")
-
-# for friend in user.followers():
-#    print(friend.screen_name)
-
-
-
 user_name="manusquall"
 followers = get_followers("manusquall")
 
@@ -87,10 +71,6 @@ followers = get_followers("manusquall")
 try:
     f = open(user_name + "_followers.csv", 'r',encoding="utf-8")
     csv_f = csv.reader(f)
-
-
-
-
 
 
     for row in csv_f:
@@ -116,25 +96,6 @@ try:
                 unfollowersDict[row[0]] = ("@"+row[1])
 
 
-
-    # HEADERS = ["name", "screen_name", "followers_count", "friends_count"]
-    # for profile_data in followers:
-    #     profile = []
-    #     for header in HEADERS:
-    #         profile.append(profile_data._json[header])
-    #     print(profile)
-
-
-
-
-
-    # save_followers_to_csv("manusquall", followers)
-
-
-    # print(unfollowersDict)
-
-
-
     #direct messages:
     recipient_id= user.id_str
 
@@ -153,6 +114,10 @@ try:
 
     direct_message = api.send_direct_message(recipient_id, text)
     print(direct_message.message_create['message_data']['text'])
+
+    #save the new list of current followers
+    save_followers_to_csv("manusquall", followers)
+
 
 
 #if the csv file doesn't exist
