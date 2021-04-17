@@ -1,3 +1,4 @@
+# -*-coding:Latin-1 -*
 import tweepy
 import time
 import csv
@@ -6,7 +7,7 @@ import datetime
 
 
 # import tokens to access twetter api
-from auth import (
+from auth.auth import (
     consumer_key,
     consumer_secret,
     access_token,
@@ -63,22 +64,6 @@ user = api.get_user('manusquall')
 unfollowersDict = {}
 
 
-
-
-
-# print(user.screen_name)
-# print("le nombre de personne qui vous suivent : ", user.followers_count)
-# print("le nombre de personne que vous suivez : ", user.friends_count)
-# for friend in user.friends():
-#    print(friend.screen_name)
-   
-# print("-----------------------------------------------------")
-
-# for friend in user.followers():
-#    print(friend.screen_name)
-
-
-
 user_name="manusquall"
 followers = get_followers("manusquall")
 
@@ -86,10 +71,6 @@ followers = get_followers("manusquall")
 try:
     f = open(user_name + "_followers.csv", 'r',encoding="utf-8")
     csv_f = csv.reader(f)
-
-
-
-
 
 
     for row in csv_f:
@@ -110,44 +91,33 @@ try:
             if(follower.screen_name=="squallbot1"):
                 print(present)
             if(present==0):
-                    print(row[1], " n'est plus présent")
-                    userFollower = api.get_user(follower.screen_name)
-                    unfollowersDict[row[0]] = ("@"+row[1])
-
-
-
-    # HEADERS = ["name", "screen_name", "followers_count", "friends_count"]
-    # for profile_data in followers:
-    #     profile = []
-    #     for header in HEADERS:
-    #         profile.append(profile_data._json[header])
-    #     print(profile)
-
-
-
-
-
-    # save_followers_to_csv("manusquall", followers)
-
-
-    # print(unfollowersDict)
-
+                print(row[1], " n'est plus présent")
+                userFollower = api.get_user(follower.screen_name)
+                unfollowersDict[row[0]] = ("@"+row[1])
 
 
     #direct messages:
     recipient_id= user.id_str
-    text = "La liste des unfollowers depuis le dernier check: \n\n"
+
+    if(bool(unfollowersDict)):
+        text = "La liste des unfollowers depuis le dernier check: \n\n"
 
 
-    for key in unfollowersDict:
-        text += key + " : " + unfollowersDict[key]
-        text += "\n"
+        for key in unfollowersDict:
+            text += key + " : " + unfollowersDict[key]
+            text += "\n"
+    else:
+        text = "La liste des unfollowers depuis le dernier check est vide"
 
     print(text)
 
 
-    # direct_message = api.send_direct_message(recipient_id, text)
-    # print(direct_message.message_create['message_data']['text'])
+    direct_message = api.send_direct_message(recipient_id, text)
+    print(direct_message.message_create['message_data']['text'])
+
+    #save the new list of current followers
+    save_followers_to_csv("manusquall", followers)
+
 
 
 #if the csv file doesn't exist
