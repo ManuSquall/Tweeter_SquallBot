@@ -6,7 +6,7 @@ import datetime
 
 
 # import tokens to access twetter api
-from auth import (
+from auth.auth import (
     consumer_key,
     consumer_secret,
     access_token,
@@ -107,8 +107,8 @@ try:
                         break
 
                         
-            if(follower.screen_name=="squallbot1"):
-                print(present)
+            # if(follower.screen_name=="squallbot1"):
+            #     print(present)
             if(present==0):
                     print(row[1], " n'est plus présent")
                     userFollower = api.get_user(follower.screen_name)
