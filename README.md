@@ -6,10 +6,11 @@ This is Python bot script which connect to  twitter API with [Tweepy library](ht
 
 Things you need to install:
 
-```
+
 - [Python 3](https://www.python.org/download/releases/3.0/) (i used 3.8.5 version)
 - [Tweepy library](https://www.tweepy.org/) (a module to install with pip)
-```
+
+
 
 ## Getting Started
 
