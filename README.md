@@ -22,8 +22,8 @@ A "python .\squallbot.py" command should finally run it (in PowerShell if you ar
 
 
 ### Illustrations
-![output](/doc/Image1.png)
-![hosting](/doc/Image2.png)
+![output](/readme/Image1.png)
+![hosting](/readme/Image2.png)
 
 ## Built With
 
@@ -32,13 +32,13 @@ A "python .\squallbot.py" command should finally run it (in PowerShell if you ar
 ## Contributing
 
 No CONTRIBUTING.md yet but feel free to submit pull requests.
-## Authors
+## Authors / Contributors
 
-* **ManuSquall** - *Initial work* - [PurpleBooth](https://github.com/ManuSquall)
+*  [**ManuSquall**](https://manusquall.azurewebsites.net/)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 
 ## Acknowledgments
 
