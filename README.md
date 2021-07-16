@@ -1,6 +1,6 @@
 # Tweeter SquallBot
 
-This is Python bot script which connect to  twitter API with [Tweepy library](https://www.tweepy.org/) to perfom some actions. Actually it notify me by direct message about a list of account who unfollow me since the last check. I hosted on Azure like a webjob and define a CRON expression to schedule it.
+This is a Python bot script which connect to  twitter API with [Tweepy library](https://www.tweepy.org/) to perfom some actions. Actually it notify me by direct message about a list of account who unfollow me since the last check. I hosted on Azure like a webjob and define a CRON expression to schedule it.
 
 ### Prerequisites
 
