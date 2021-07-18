@@ -143,11 +143,11 @@ try:
         text += key + " : " + unfollowersDict[key]
         text += "\n"
 
-    print(text)
+    # print(text)
 
 
-    # direct_message = api.send_direct_message(recipient_id, text)
-    # print(direct_message.message_create['message_data']['text'])
+    direct_message = api.send_direct_message(recipient_id, text)
+    print(direct_message.message_create['message_data']['text'])
 
 
 #if the csv file doesn't exist
