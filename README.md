@@ -8,7 +8,7 @@ Things you need to install:
 
 
 - [Python 3](https://www.python.org/download/releases/3.0/) (i used 3.8.5 version)
-- [Tweepy library](https://www.tweepy.org/) (a module to install with pip)
+- [Tweepy library 3.9.0](https://www.tweepy.org/) (a module to install with pip)
 
 
 
@@ -41,7 +41,7 @@ No CONTRIBUTING.md yet but feel free to submit pull requests.
 This project is licensed under the MIT License.
 
 ## Acknowledgments
-
+* https://docs.tweepy.org/en/v3.10.0/auth_tutorial.html?highlight=bearer%20token#oauth-2-authentication
 * https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/user
 * https://gist.github.com/PandaWhoCodes/46f58fdead71f4c71453d9ed1e21adf8
 * https://kohera.be/tutorials-2/running-python-scripts-on-azure-with-azure-container-instances/
