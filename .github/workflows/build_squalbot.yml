@@ -1,10 +1,8 @@
 name: build squallbot
-    
+
     on:
-      schedule:
-        - cron: "*/10 * * * *" #runs At every 10th minute
-      branches:
-        - galsendevBot 
+        schedule:
+            - cron: "*/10 * * * *" #runs At every 10th minute
     
     jobs:
       build:
@@ -13,6 +11,8 @@ name: build squallbot
         steps:
           - name: checkout repo content
             uses: actions/checkout@v2 # checkout the repository content to github runner.
+            with:
+              ref: galsendevbot
           - name: setup python
             uses: actions/setup-python@v3
             with:
